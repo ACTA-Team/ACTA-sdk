@@ -1,4 +1,4 @@
-import { useActaClient } from "../ActaProvider"
+import { useActaClient } from "../providers/ActaClientContext"
 import { Address, BASE_FEE, Contract, TransactionBuilder, Account, rpc } from "@stellar/stellar-sdk"
 
 type Signer = (unsignedXdr: string, opts: { networkPassphrase: string }) => Promise<string>

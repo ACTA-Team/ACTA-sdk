@@ -1,4 +1,4 @@
-import { useActaClient } from "../ActaProvider"
+import { useActaClient } from "../providers/ActaClientContext"
 
 export function useVaultApi() {
   const client = useActaClient()

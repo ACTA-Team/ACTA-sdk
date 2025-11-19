@@ -1,7 +1,8 @@
 /**
  * Provider for the ACTA SDK
  */
-export { ActaConfig } from "./ActaProvider";
+export { ActaConfig } from "./providers/ActaProvider";
+export { useActaClient } from "./providers/ActaClientContext";
 
 // Export all the enviroments
 export const mainNet = "https://acta.build/api/mainnet";
