@@ -3,3 +3,4 @@
  */
 export * from "./useCreateCredential";
 export * from "./useCreateVault";
+export * from "./useAuthorizeIssuer";
