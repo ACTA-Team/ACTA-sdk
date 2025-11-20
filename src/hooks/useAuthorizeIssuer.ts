@@ -1,8 +1,13 @@
 import { useActaClient } from "../providers/ActaClientContext"
 import { Address, BASE_FEE, Contract, TransactionBuilder, Account, rpc } from "@stellar/stellar-sdk"
 
+/** Function that signs an unsigned XDR with the given network passphrase. */
 type Signer = (unsignedXdr: string, opts: { networkPassphrase: string }) => Promise<string>
 
+/**
+ * Hook to authorize an issuer address in the Vault contract.
+ * @returns `{ authorizeIssuer }` to build, sign, send, and wait for the tx.
+ */
 export function useAuthorizeIssuer() {
   const client = useActaClient()
 
@@ -19,6 +24,11 @@ export function useAuthorizeIssuer() {
   }
 
   return {
+    /**
+     * Authorize `issuer` for `owner` in the Vault.
+     * @param args - Owner public key, issuer address, and signer.
+     * @returns `{ txId }` of the submitted transaction.
+     */
     authorizeIssuer: async (args: { owner: string; issuer: string; signTransaction: Signer }) => {
       const cfg = await client.getConfig()
       const { rpcUrl, networkPassphrase, vaultContractId } = cfg

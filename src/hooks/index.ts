@@ -1,5 +1,7 @@
 /**
- * Hooks for the ACTA SDK
+ * React hooks for the ACTA SDK.
+ *
+ * Thin wrappers around the `ActaClient` for idiomatic usage in React apps.
  */
 export * from "./useCreateCredential";
 export * from "./useCreateVault";

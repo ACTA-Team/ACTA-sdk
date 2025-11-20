@@ -1,8 +1,13 @@
 import { useActaClient } from "../providers/ActaClientContext"
 
+/**
+ * Hook to prepare unsigned XDRs for store/issue flows.
+ * @returns `{ prepareStore, prepareIssue }` request builders.
+ */
 export function useTxPrepare() {
   const client = useActaClient()
   return {
+    /** Build request for `/tx/prepare/store`. */
     prepareStore: (args: {
       owner: string
       vcId: string
@@ -11,6 +16,7 @@ export function useTxPrepare() {
       vaultContractId?: string
       issuer?: string
     }) => client.prepareStoreTx(args),
+    /** Build request for `/tx/prepare/issue`. */
     prepareIssue: (args: {
       owner: string
       vcId: string

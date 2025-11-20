@@ -2,8 +2,8 @@ import { useActaClient } from "../providers/ActaClientContext";
 import { CreateCredentialPayload } from "../types";
 
 /**
- * Use the useCreateCredential hook to create a new credential.
- * @returns A function to create a new credential.
+ * Hook to issue a new credential via the API.
+ * @returns `{ createCredential }` which posts to `/credentials`.
  */
 export function useCreateCredential() {
   const client = useActaClient();

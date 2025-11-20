@@ -1,3 +1,8 @@
+/**
+ * Payload variants to create a credential.
+ * - Signed XDR flow: submit `signedXdr` and `vcId`.
+ * - Server-issued flow: provide `owner`, `vcId`, `vcData`, and `vaultContractId` (optional `didUri`).
+ */
 export type CreateCredentialPayload =
   | {
       signedXdr: string;
